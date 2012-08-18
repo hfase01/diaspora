@@ -11,7 +11,7 @@
 
 NAME=unicorn
 DESC="Diaspora"
-PID=/home/hans/workspace/diaspora/tmp/pids/unicorn.pid
+PID=/home/diaspora/diaspora-hfase/tmp/pids/unicorn.pid
 START_RESQUE_PROCESS="./resque.sh"
 START_DAEMON_PROCESS="RAILS_ENV=production bundle exec unicorn_rails -c config/unicorn.rb -D"
 

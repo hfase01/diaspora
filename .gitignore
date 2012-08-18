@@ -1,5 +1,5 @@
 #trademark sillyness
-app/views/home/_show.*
+# app/views/home/_show.* # removed this so that other can see my landing, ToS & About pages as examples.
 app/assets/images/custom/*
 
 
