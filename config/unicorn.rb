@@ -1,10 +1,10 @@
-rails_env = ENV['RAILS_ENV'] || 'development'
+rails_env = ENV['RAILS_ENV'] || 'production'
 
 # Enable and set these to run the worker as a different user/group
-#user  = 'diaspora'
-#group = 'diaspora'
+user  = 'hans'
+group = 'hans'
 
-worker_processes 1
+worker_processes 8
 
 ## Load the app before spawning workers
 preload_app true
@@ -12,8 +12,8 @@ preload_app true
 # How long to wait before killing an unresponsive worker
 timeout 30
 
-#pid '/var/run/diaspora/diaspora.pid'
-#listen '/var/run/diaspora/diaspora.sock', :backlog => 2048
+pid '/home/hans/workspace/diaspora/tmp/pids/unicorn.pid'
+listen '/home/hans/workspace/diaspora/tmp/sockets/diaspora.socket', :backlog => 2048
 
 # Ruby Enterprise Feature
 if GC.respond_to?(:copy_on_write_friendly=)
@@ -30,7 +30,7 @@ before_fork do |server, worker|
     Resque.redis.client.disconnect
   end
 
-  old_pid = '/var/run/diaspora/diaspora.pid.oldbin'
+  old_pid = 'tmp/pids/unicorn.pid.oldbin'
   if File.exists?(old_pid) && server.pid != old_pid
     begin
       Process.kill("QUIT", File.read(old_pid).to_i)
