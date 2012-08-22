@@ -5,16 +5,16 @@
 # Required-Stop:     $local_fs $remote_fs $network $syslog
 # Default-Start:     2 3 4 5
 # Default-Stop:      0 1 6
-# Short-Description: diaspora repository management
-# Description:       diaspora repository management
+# Short-Description: diaspora social network
+# Description:       diaspora federated ruby-on-rails social networking application.
 ### END INIT INFO
 
-NAME=unicorn
+NAME="unicorn"
 DESC="Diaspora"
-PID=/home/diaspora/diaspora-hfase/tmp/pids/unicorn.pid
+PID="/home/diaspora/diaspora-hfase/tmp/pids/unicorn.pid"
 START_RESQUE_PROCESS="./resque.sh"
 START_DAEMON_PROCESS="RAILS_ENV=production bundle exec unicorn_rails -c config/unicorn.rb -D"
-
+RESQUE_PID="/home/diaspora/diaspora-hfase/tmp/pids/resque.pid"
 
 case "$1" in
   start)
