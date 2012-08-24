@@ -4,7 +4,7 @@ if [ -e '.rvmrc.local' ]; then
 elif [ -e '.rvmrc_custom' ] ; then
   source .rvmrc_custom;
 else
-  rvm use --create ruby-1.9.3-p194@diaspora
+  rvm use --create ruby-1.9.3-p125@diaspora
 fi
 
 if [ "$(gem --version)" != "1.8.24" ]; then

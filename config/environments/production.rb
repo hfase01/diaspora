@@ -39,10 +39,8 @@ Diaspora::Application.configure do
 
 
   # Enable serving of images, stylesheets, and javascripts from an asset server
-  if ENV['ASSET_HOST']
-    config.action_controller.asset_host = ENV['ASSET_HOST']
-  end
-
+  config.action_controller.asset_host = '//s3.amazonaws.com/hfase-assets'
+  
   # Disable delivery errors, bad email addresses will be ignored
   # config.action_mailer.raise_delivery_errors = false
 

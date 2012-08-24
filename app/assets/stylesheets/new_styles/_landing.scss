@@ -41,7 +41,7 @@
 
   background : {
     color : #2b2b2b;
-    image : image_url('landing/background.jpg');
+    image : image_url('/background.jpg');
     size : cover;
     position : center;
   }
@@ -59,6 +59,7 @@
     background-color : rgba(0,0,0,0.6);
 
     h1, h3 { font-weight : 200; }
+
 
     h1 {
       font-size : 80px;

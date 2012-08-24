@@ -1,10 +1,10 @@
 <% content_for :head do %>
     <meta property="og:title" content="<%= AppConfig[:pod_name] %>" />
-    <meta property="og:description" content="Make it uniquely you" />
+    <meta property="og:description" content="Diaspora*" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="<%= AppConfig[:pod_url] %>" />
     <meta property="og:image" content="<%= AppConfig[:pod_url] %>/icon_128.gif" />
-    <meta property="fb:app_id" content="223055781146202" />
+    <meta property="fb:app_id" content="223270354356407" />
 <% end %>
 
 <div id="landing">
@@ -13,43 +13,25 @@
 
     <div id="controls">
       <a href="https://twitter.com/hfase">
-        <span class="label label-inverse" title="Follow @makrapp on Twitter">
-          <img src="https://d3mbmfe8268ud7.cloudfront.net/landing/home_twit@2x.png" class="twitter-bird" height=20 width=20 />
-        </span>
-      </a>
-
-      <a href="/blog/">
-        <span class="label label-inverse">
-          BLOG
-        </span>
-      </a>
-
-      <a href="/about/">
-        <span class="label label-inverse">
-          ABOUT
-        </span>
-      </a>
-
-      <a href="/@privacy/">
-        <span class="label label-inverse">
-          PRIVACY
+        <span class="btn btn-inverse label label-inverse">
+          TWITTER
         </span>
       </a>
 
       <a href="/terms/">
-        <span class="label label-inverse">
+        <span class="btn btn-inverse label label-inverse">
           TERMS
         </span>
       </a>
 
       <a href="http://diaspora.github.com/diaspora">
-        <span class="label label-inverse" title="Fork the code on Github">
-          <img src="https://d3mbmfe8268ud7.cloudfront.net/landing/home_git@2x.png" class="github-octocat" height=20 width=20 />
+        <span class="btn btn-inverse label label-inverse" title="Fork the code on Github">
+          GITHUB
         </span>
       </a>
 
       <a href="/users/sign_in">
-        <span class="label label-inverse">
+        <span class="btn btn-primary label label-inverse">
           LOG IN
         </span>
       </a>
@@ -72,8 +54,8 @@
       </div>
 
       <div class='span5'>
-        <h3>hfase.com gives you the tools to quickly and easily 
-          collect the things that inspire you, and share them to inspire others.
+       <h3>
+        Not just another social-network.
         </h3>
         <div id="sign_up">
 
@@ -115,7 +97,7 @@
 
             </fieldset>
 
-            <input class="new-btn button" name="commit" type="submit" value="Sign Up" />
+            <input class="new-btn button inverted" name="commit" type="submit" value="Sign Up" />
           </form>
 
         </div>
@@ -131,9 +113,9 @@
 <!--image animation scripts-->
 <script>
   $(function(){
-    var cdnRoot = 'https://d3mbmfe8268ud7.cloudfront.net'
+    var cdnRoot = 'https://s3.amazonaws.com/hfase-assets/assets'
       , count = 4
-      , pause = 8000
+      , pause = 16000
       , i = 1;
 
     cycleIn();
@@ -160,6 +142,6 @@
     var js, fjs = d.getElementsByTagName(s)[0];
     if (d.getElementById(id)) return;
     js = d.createElement(s); js.id = id;
-    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=223055781146202";
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=223270354356407";
     fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
