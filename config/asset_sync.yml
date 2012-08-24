@@ -1,0 +1,26 @@
+defaults: &defaults
+  fog_provider: 'AWS'
+  aws_access_key_id: "AKIAIH36WQUEMCWHM2GQ"
+  aws_secret_access_key: "IwcQd8jvhPPOHBJ/6aUCd1dus8UyDvZXkpXgD1r+"
+  fog_directory: "hfase-assets"
+  # You may need to specify what region your storage bucket is in
+  fog_region: "us-east-1"
+  # existing_remote_files: delete
+  # To delete existing remote files.
+   existing_remote_files: delete 
+  # Automatically replace files with their equivalent gzip compressed version
+  # gzip_compression = true
+  # Fail silently.  Useful for environments such as Heroku
+  # fail_silently = true
+
+development:
+  <<: *defaults
+
+test:
+  <<: *defaults
+
+staging:
+  <<: *defaults
+
+production:
+  <<: *defaults
