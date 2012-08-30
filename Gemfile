@@ -28,7 +28,7 @@ gem 'newrelic_rpm'
 gem "rpm_contrib", "~> 2.1.7"
 
 group :production do # we don't install these on travis to speed up test runs
-  gem 'rails_admin', '~> 0.0.3'
+  gem 'rails_admin', :git => 'git://github.com/halida/rails_admin.git'
   gem 'fastercsv', '1.5.5', :require => false
   gem 'rack-ssl', :require => 'rack/ssl'
   gem 'rack-rewrite', '~> 1.2.1', :require => false
@@ -82,7 +82,7 @@ gem 'acts-as-taggable-on', :git => "https://github.com/mbleigh/acts-as-taggable-
 # URIs and HTTP
 gem 'addressable', '~> 2.2', :require => 'addressable/uri'
 gem 'http_accept_language', '~> 1.0.2'
-gem 'typhoeus'
+gem 'typhoeus', '~> 0.3.3'
 
 # views
 gem 'haml', '3.1.6.rc.1'
