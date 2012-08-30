@@ -1,0 +1,64 @@
+#!/bin/bash
+### BEGIN INIT INFO
+# Provides:          diaspora
+# Required-Start:    $local_fs $remote_fs $network $syslog redis-server
+# Required-Stop:     $local_fs $remote_fs $network $syslog
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Short-Description: diaspora social network
+# Description:       diaspora federated ruby-on-rails social networking application.
+### END INIT INFO
+
+NAME="unicorn"
+DESC="Diaspora"
+
+source /etc/profile.d/rvm.sh
+rvm use --create ruby-1.9.3-p125@diaspora
+if [ "$(gem --version)" != "1.8.17" ]; then
+  rvm rubygems 1.8.17
+fi
+
+SERVER_PID="/home/hans/diaspora/tmp/pids/unicorn.pid"
+START_RESQUE_COMMAND="/home/hans/diaspora/script/resque"
+START_DAEMON_COMMAND="RAILS_ENV=production bundle exec unicorn_rails -c config/unicorn.rb -D"
+RESQUE_PID="/home/hans/diaspora/tmp/pids/resque.pid"
+
+APP_ROOT="/home/hans/diaspora"
+
+
+
+
+
+
+cd $APP_ROOT || exit 1
+
+
+case "$1" in
+  start)
+        echo -n "Starting $DESC: "
+        bash -lc "$START_DAEMON_COMMAND && $START_RESQUE_COMMAND"
+        echo "Started $NAME."
+        ;;
+  stop)
+        echo -n "Stopping $DESC: "
+        kill -QUIT `cat $SERVER_PID`
+        kill -QUIT `cat $RESQUE_PID`
+        echo "Stopped $NAME."
+        ;;
+  restart)
+        echo -n "Restarting $DESC: "
+        kill -USR2 `cat $SERVER_PID`
+        kill -USR2 `cat $RESQUE_PID`
+        sleep 1
+        kill -USR2 `cat $SERVER_PID`
+        kill -USR2 `cat $RESQUE_PID`
+        sleep 1
+        bash -lc "$START_DAEMON_COMMAND && $START_RESQUE_COMMAND"
+        echo "Restarted $NAME."
+        ;;
+  *)
+        echo "Usage: $NAME {start|stop|restart}" >&2
+        exit 1
+        ;;
+esac
+

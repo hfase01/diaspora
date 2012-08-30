@@ -1,0 +1,11 @@
+#!/bin/bash
+APP_ROOT="/home/hans/diaspora"
+START_RESQUE_COMMAND="bundle exec rake resque:work QUEUE=* BACKGROUND=yes PIDFILE=$APP_ROOT/tmp/pids/resque.pid"
+
+cd  $APP_ROOT
+source /etc/profile.d/rvm.sh
+rvm --create use ruby-1.9.3-p125@diaspora
+for i in {1..3}; do $START_RESQUE_COMMAND; done
+
+exit 0
+
