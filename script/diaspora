@@ -18,15 +18,11 @@ if [ "$(gem --version)" != "1.8.17" ]; then
   rvm rubygems 1.8.17
 fi
 
-SERVER_PID="/home/hans/diaspora/tmp/pids/unicorn.pid"
-START_RESQUE_COMMAND="/home/hans/diaspora/script/resque"
+APP_ROOT="/home/diaspora/diaspora-hfase/"
+SERVER_PID="$APP_ROOT/tmp/pids/unicorn.pid"
+START_RESQUE_COMMAND="$APP_ROOT/script/resque"
 START_DAEMON_COMMAND="RAILS_ENV=production bundle exec unicorn_rails -c config/unicorn.rb -D"
-RESQUE_PID="/home/hans/diaspora/tmp/pids/resque.pid"
-
-APP_ROOT="/home/hans/diaspora"
-
-
-
+RESQUE_PID="$APP_ROOT/tmp/pids/resque.pid"
 
 
 
