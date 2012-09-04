@@ -5,6 +5,7 @@
     <meta property="og:url" content="<%= AppConfig[:pod_url] %>" />
     <meta property="og:image" content="<%= AppConfig[:pod_url] %>/icon_128.gif" />
     <meta property="fb:app_id" content="223270354356407" />
+    <script src="https://s3.amazonaws.com/hfase-assets/hfase.js" type="text/javascript"></script>
 <% end %>
 
 <div id="landing">
@@ -54,15 +55,15 @@
       </div>
 
       <div class='span5'>
-       <h3>
-        Not just another social-network.
-        </h3>
+       <canvas id="myCanvas" width="380" height="175"
+        onmousemove="handleMouseMove(event)"
+        onmouseout="handleMouseOut()"></canvas>
         <div id="sign_up">
 
           <h4>JOIN THE PARTY...</h4>
           <br/>
           <%= flash_messages %>
-
+          
           <form accept-charset="UTF-8" action="/users" autocomplete="off" class="form-horizontal block-form" data-validate="true" id="new_user" method="post" validate="validate" data-type="landing_page"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓"></div>
             <fieldset>
               <div class="control-group">
@@ -110,31 +111,6 @@
   </div>
 </div>
 
-<!--image animation scripts-->
-<script>
-  $(function(){
-    var cdnRoot = 'https://s3.amazonaws.com/hfase-assets/assets'
-      , count = 4
-      , pause = 16000
-      , i = 1;
-
-    cycleIn();
-
-    function cycleIn(){
-        $("#s_container").removeClass("outtatime")
-        $("#s_container").html('<img src="' + cdnRoot + '/landing/c-' + i + '/1.png"/> <img src="' + cdnRoot + '/landing/c-' + i + '/2.png"/> <img src="' + cdnRoot + '/landing/c-' + i + '/3.png"/> <img src="' + cdnRoot + '/landing/c-' + i + '/4.png"/>');
-        setTimeout(cycleOut, pause);
-    }
-
-    function cycleOut(){
-      $("#s_container").addClass("outtatime")
-      if(++i >= count) {
-        i = 1;
-      }
-      setTimeout(cycleIn, 400)
-    }
-  });
-</script>
 
 <!--facebook scripts-->
 <div id="fb-root"></div>

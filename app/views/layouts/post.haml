@@ -18,6 +18,9 @@
 
     %link{:rel => 'shortcut icon', :href => "#{image_path('favicon.png')}" }
     %link{:rel => 'apple-touch-icon', :href => "#{image_path('apple-touch-icon.png')}"}
+    %script{:src => "https://w.sharethis.com/button/buttons.js", :type => "text/javascript"}
+      :javascript
+        stLight.options({publisher: "e71dee7a-18a8-4ce1-9bd6-0fa30d9eae16"});
 
     = og_site_name
     = chartbeat_head_block

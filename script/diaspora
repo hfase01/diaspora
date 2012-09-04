@@ -10,7 +10,7 @@
 ### END INIT INFO
 
 NAME="unicorn"
-DESC="Diaspora"
+DESC="hfase"
 
 source /etc/profile.d/rvm.sh
 rvm use --create ruby-1.9.3-p125@diaspora
@@ -18,7 +18,7 @@ if [ "$(gem --version)" != "1.8.17" ]; then
   rvm rubygems 1.8.17
 fi
 
-APP_ROOT="/home/diaspora/diaspora-hfase/"
+APP_ROOT="/home/diaspora/diaspora-hfase"
 SERVER_PID="$APP_ROOT/tmp/pids/unicorn.pid"
 START_RESQUE_COMMAND="$APP_ROOT/script/resque"
 START_DAEMON_COMMAND="RAILS_ENV=production bundle exec unicorn_rails -c config/unicorn.rb -D"
