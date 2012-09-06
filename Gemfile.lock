@@ -164,10 +164,10 @@ GEM
     excon (0.14.2)
     execjs (1.4.0)
       multi_json (~> 1.0)
-    factory_girl (2.6.4)
-      activesupport (>= 2.3.9)
-    factory_girl_rails (1.7.0)
-      factory_girl (~> 2.6.0)
+    factory_girl (4.0.0)
+      activesupport (>= 3.0.0)
+    factory_girl_rails (4.0.0)
+      factory_girl (~> 4.0.0)
       railties (>= 3.0.0)
     faraday (0.8.1)
       multipart-post (~> 1.1)
@@ -490,7 +490,7 @@ DEPENDENCIES
   database_cleaner (= 0.7.1)
   debugger
   devise (= 1.5.3)
-  factory_girl_rails (= 1.7.0)
+  factory_girl_rails (= 4.0.0)
   faraday
   faraday_middleware
   fastercsv (= 1.5.5)
