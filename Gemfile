@@ -2,9 +2,10 @@ source 'http://rubygems.org'
 
 gem 'bundler', '> 1.1.0'
 ruby '1.9.3' if ENV['HEROKU']
-gem 'rails', '3.2.6'
-gem 'foreman', '0.46'
-gem 'thin', '~> 1.3.1',    :require => false
+gem 'rails', '3.2.8'
+gem 'foreman', '0.57'
+gem 'thin', '~> 1.4.1',    :require => false
+
 gem 'rails_autolink'
 gem 'unicorn', '~> 4.3.0'
 
@@ -14,7 +15,9 @@ gem 'rack-cors', '~> 0.2.4', :require => 'rack/cors'
 # authentication
 gem 'devise', '1.5.3'
 gem 'remotipart', '~> 1.0'
-gem 'omniauth', '1.0.3'
+
+
+gem 'omniauth', '1.1.1'
 gem 'omniauth-facebook'
 gem 'omniauth-tumblr'
 gem 'omniauth-twitter'
@@ -47,7 +50,7 @@ end
 # database
 gem 'settingslogic', :git => 'https://github.com/binarylogic/settingslogic.git'
 gem "activerecord-import", "~> 0.2.9"
-gem 'foreigner', '~> 1.1.0'
+gem 'foreigner', '~> 1.2.1'
 gem 'mysql2', '0.3.11' if ENV['DB'].nil? || ENV['DB'] == 'all' || ENV['DB'] == 'mysql'
 gem 'pg' if ENV['DB'] == 'all' || ENV['DB'] == 'postgres'
 gem 'sqlite3' if ENV['DB'] == 'all' || ENV['DB'] == 'sqlite'
@@ -72,7 +75,9 @@ gem 'roxml', :git => 'https://github.com/Empact/roxml.git', :ref => '7ea9a9ffd23
 gem 'ruby-oembed', '~> 0.8.7'
 
 # queue
-gem 'resque', '1.20.0'
+
+
+gem 'resque', '1.22.0'
 gem 'resque-timeout', '1.0.0'
 gem 'SystemTimer', '1.2.3', :platforms => :ruby_18
 
@@ -119,10 +124,11 @@ gem 'jasmine', :git => 'https://github.com/pivotal/jasmine-gem.git'
 group :test do
   gem 'capybara', '~> 1.1.2'
   gem 'cucumber-rails', '1.3.0', :require => false
-  gem 'database_cleaner', '0.7.1'
+  gem 'database_cleaner', '0.8'
+
   gem 'timecop'
   gem 'factory_girl_rails', '1.7.0'
-  gem 'fixture_builder', '0.3.3'
+  gem 'fixture_builder', '0.3.4'
   gem 'fuubar', '>= 1.0'
   gem 'rspec-instafail', '>= 0.1.7', :require => false
   gem 'selenium-webdriver', '~> 2.22.1'
@@ -141,7 +147,7 @@ end
 
 group :development do
   gem 'heroku'
-  gem 'heroku_san', '3.0.2', :platforms => :mri_19
+  gem 'heroku_san', '3.0.4', :platforms => :mri_19
   gem 'capistrano', :require => false
   gem 'capistrano_colors', :require => false
   gem 'capistrano-ext', :require => false
