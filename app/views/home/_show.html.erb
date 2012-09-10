@@ -106,6 +106,31 @@
     </div>
   </div>
 
+<script>
+  $(function(){
+    var cdnRoot = 'https://s3.amazonaws.com/hfase-assets/assets'
+      , count = 4
+      , pause = 8000
+      , i = 1;
+
+    cycleIn();
+
+    function cycleIn(){
+        $("#s_container").removeClass("outtatime")
+        $("#s_container").html('<img src="' + cdnRoot + '/landing/c-' + i + '/1.png"/> <img src="' + cdnRoot + '/landing/c-' + i + '/2.png"/> <img src="' + cdnRoot + '/landing/c-' + i + '/3.png"/> <img src="' + cdnRoot + '/landing/c-' + i + '/4.png"/>');
+        setTimeout(cycleOut, pause);
+    }
+
+    function cycleOut(){
+      $("#s_container").addClass("outtatime")
+      if(++i >= count) {
+        i = 1;
+      }
+      setTimeout(cycleIn, 400)
+    }
+  });
+</script>
+
   <div id="footer">
     ‌© 2012
   </div>
