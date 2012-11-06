@@ -219,4 +219,6 @@ Diaspora::Application.routes.draw do
 
   # Startpage
   root :to => 'home#show'
+  get "/terms" => 'home#terms'
+  get "/about" => 'home#about'
 end
