@@ -3,7 +3,7 @@ source 'http://rubygems.org'
 gem 'bundler', '> 1.1.0'
 gem 'rails', '3.2.8'
 gem 'foreman', '0.59'
-gem 'unicorn', :require => false
+gem 'unicorn', '4.3.1',    :require => false
 gem 'rails_autolink', '1.0.9'
 
 # cross-origin resource sharing
