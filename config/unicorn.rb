@@ -14,8 +14,8 @@ timeout 30
 
 @resque_pid = nil
 
-pid 'tmp/pids/unicorn.pid'
-listen 'tmp/sockets/diaspora.socket', :backlog => 2048
+pid '/home/diaspora/diaspora-hfase/tmp/pids/unicorn.pid'
+listen '/home/diaspora/diaspora-hfase/tmp/sockets/diaspora.socket', :backlog => 2048
 
 # Ruby Enterprise Feature
 if GC.respond_to?(:copy_on_write_friendly=)
