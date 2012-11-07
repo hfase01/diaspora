@@ -1,29 +1,21 @@
 source 'http://rubygems.org'
 
 gem 'bundler', '> 1.1.0'
-
 gem 'rails', '3.2.8'
-
 gem 'foreman', '0.59'
-
 gem 'thin', '1.4.1',    :require => false
 gem 'rails_autolink', '1.0.9'
 
 # cross-origin resource sharing
-
 gem 'rack-cors', '0.2.7', :require => 'rack/cors'
 
 # authentication
-
 gem 'devise', '2.1.2'
-
 gem 'remotipart', '1.0.2'
-
 gem 'omniauth', '1.1.1'
 gem 'omniauth-facebook', '1.3.0'
 gem 'omniauth-tumblr', '1.1'
 gem 'omniauth-twitter', '0.0.11'
-
 gem 'twitter', '2.0.2'
 
 # mail
@@ -36,11 +28,9 @@ group :production do # we don't install these on travis to speed up test runs
   gem 'fastercsv', '1.5.5', :require => false
   gem 'rack-ssl', '1.3.2', :require => 'rack/ssl'
   gem 'rack-rewrite', '1.2.1', :require => false
-
   # analytics
   gem 'rack-google-analytics', '0.11.0', :require => 'rack/google-analytics'
   gem 'rack-piwik', '0.1.3', :require => 'rack/piwik', :require => false
-  
 end
 
 # configuration
@@ -141,21 +131,17 @@ group :test do
   gem 'capybara', '1.1.2'
   gem 'cucumber-rails', '1.3.0', :require => false
   gem 'database_cleaner', '0.8'
-
   gem 'timecop', '0.5.1'
   gem 'factory_girl_rails', '4.1.0'
   gem 'fixture_builder', '0.3.4'
   gem 'fuubar', '1.0.0'
   gem 'rspec-instafail', '0.2.4', :require => false
   gem 'selenium-webdriver', '2.25.0'
-
   gem 'webmock', '1.8.10', :require => false
-
   gem 'spork', '1.0.0rc3'
   gem 'guard-rspec', '0.7.3'
   gem 'guard-spork', '0.8.0'
   gem 'guard-cucumber', '1.0.0'
-
 end
 
 group :test, :development do
