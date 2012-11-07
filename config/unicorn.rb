@@ -1,4 +1,4 @@
-rails_env = ENV['RAILS_ENV'] || 'development'
+rails_env = ENV['RAILS_ENV'] || 'production'
 
 # Enable and set these to run the worker as a different user/group
 #user  = 'diaspora'
@@ -14,8 +14,8 @@ timeout 30
 
 @resque_pid = nil
 
-#pid '/var/run/diaspora/diaspora.pid'
-#listen '/var/run/diaspora/diaspora.sock', :backlog => 2048
+pid 'tmp/pids/unicorn.pid'
+listen 'tmp/sockets/diaspora.socket', :backlog => 2048
 
 # Ruby Enterprise Feature
 if GC.respond_to?(:copy_on_write_friendly=)
